@@ -4,6 +4,6 @@ n = int(number)
 nn = int(number + number)
 nnn = int(number + number + number)
 
-summ = n + nn + nnn
+answer = n + nn + nnn
 
-print(summ)
+print(answer)
