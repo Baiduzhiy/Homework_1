@@ -5,5 +5,4 @@ nn = int(number + number)
 nnn = int(number + number + number)
 
 answer = n + nn + nnn
-
 print(answer)

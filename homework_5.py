@@ -9,3 +9,4 @@ else:
     personal = int(input("Введите количество Вашего персонала: "))
     income_personal = income / personal
     print("Ваша выручка в расчете на одного сотрудника составила %.2f руб." % income_personal)
+    
