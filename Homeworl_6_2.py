@@ -13,8 +13,8 @@ class Road:
         self._width = width
 
     def massa(self, s_thickness):
-        s_weight = 25 # Стандартный вес куда асфальта
-        print(f"Вес асфальта составит {(s_thickness / 100) * s_weight * self._length * self._width} тонн")
+        s_weight = 1200 # Стандартный вес куда асфальта
+        print(f"Вес асфальта составит {((s_thickness / 100) * s_weight * self._length * self._width) / 1000} тонн")
 
 calculation = Road(500, 5)
 calculation.massa(5)
