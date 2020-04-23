@@ -8,15 +8,14 @@
 Подсказка: сложение элементов матриц выполнять поэлементно — первый элемент первой строки первой матрицы складываем с
 первым элементом первой строки второй матрицы и т.д.
 """
+
+
 class Matrix:
     def __init__(self, param):
         self.param = param
 
-    def print_matrix(self):
-        for i in self.param:
-            for j in i:
-                print(f"{j} ", end="")
-            print()
+    def __str__(self):
+        return '\n'.join(["".join(['%d\t' % i for i in row]) for row in self.param]) # нашел данный метод в поиске, пытаюсь понять как работает этот генератор
 
     def __add__(self, other):
         r = []
@@ -24,7 +23,7 @@ class Matrix:
         for i in self.param:
             w = 0
             time_list = []
-            for j in i:
+            for n in i:
                 time_list.append(self.param[v][w] + other.param[v][w])
                 w += 1
             r.append(time_list)
@@ -33,15 +32,14 @@ class Matrix:
 
 
 m = Matrix([[1, 2, 3], [3, 2, 1], [2, 3, 1]])
-m.print_matrix()
+print(m)
 
 print()
 
 p = Matrix([[2, 4, 6], [3, 5, 1], [5, 5, 9]])
-p.print_matrix()
+print(p)
 
 print()
 
 b = Matrix(m + p)
-b.print_matrix()
-
+print(b)
