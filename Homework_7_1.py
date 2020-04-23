@@ -15,7 +15,7 @@ class Matrix:
         self.param = param
 
     def __str__(self):
-        return '\n'.join(["".join(['%d\t' % i for i in row]) for row in self.param]) # нашел данный метод в поиске, пытаюсь понять как работает этот генератор
+        return '\n'.join(["".join(['%d\t' % i for i in row]) for row in self.param])
 
     def __add__(self, other):
         r = []
