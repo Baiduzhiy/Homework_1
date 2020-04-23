@@ -8,22 +8,36 @@ V и H, соответственно.
 реализовать абстрактные классы для основных классов проекта, проверить на практике работу декоратора @property.
 """
 
-class Clothes:
+from abc import ABC, abstractmethod
 
-    def __init__(self, name, size, height):
-        self.name = name
-        self.size = size
+
+class Clothes(ABC):
+
+    @abstractmethod
+    def calculate(self):
+        pass
+
+
+class Suit(Clothes):
+    def __init__(self, height):
         self.height = height
 
-    def suit(self):
-        a = 2 * self.height + 0.3
-        print(f"Ткани на костюм необходимо {a} м.кв.")
+    @property
+    def calculate(self):
+        return 2 * self.height + 0.3
 
-    def cloack(self):
-        a = self.size/6.5 + 0.5
-        print(f"Ткани на плащ необходимо {a} м.кв.")
 
-peter = Clothes("Peter", 52, 180)
+class Cloack(Clothes):
+    def __init__(self, size):
+        self.size = size
 
-peter.suit()
-peter.cloack()
+    @property
+    def calculate(self):
+        return self.size / 6.5 + 0.5
+
+
+peter = Suit(180)
+print(f"Ткани для пошива костюма необходимо {peter.calculate} м.кв.")
+
+joe = Cloack(52)
+print(f"Ткани для пошива плаща необходимо {joe.calculate} м.кв.")
